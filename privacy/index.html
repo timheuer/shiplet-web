@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shiplet Privacy Policy - Learn how we handle your data and protect your privacy.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/app-icon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+
+    <title>Privacy Policy - Shiplet</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#5C6B7A',
+                            dark: '#4A5568',
+                            light: '#6B7A8A',
+                        },
+                        accent: {
+                            DEFAULT: '#66B3B3',
+                            mint: '#90D4A3',
+                        },
+                        destructive: '#D97373',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <style>
+        /* Additional prose styling for tables */
+        .privacy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .privacy-table th,
+        .privacy-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--separator, rgba(0, 0, 0, 0.1));
+        }
+
+        .privacy-table th {
+            font-weight: 600;
+            background: var(--bg-tertiary, #F3F4F6);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .privacy-table th {
+                background: #334155;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-none transition-shadow duration-300">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="../" class="flex items-center gap-3">
+                    <img src="../images/app-icon.png" alt="Shiplet icon" class="w-10 h-10 rounded-xl">
+                    <span class="text-xl font-semibold text-gray-900 dark:text-white">Shiplet</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="../#features" class="nav-link">Features</a>
+                    <a href="../#preview" class="nav-link">Preview</a>
+                    <a href="../privacy/" class="nav-link text-accent">Privacy</a>
+                    <a href="../#download"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white font-medium rounded-full hover:bg-accent/90 transition-colors">
+                        Download
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-accent"
+                    aria-label="Open menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                <a href="../" class="flex items-center gap-3">
+                    <img src="../images/app-icon.png" alt="Shiplet icon" class="w-10 h-10 rounded-xl">
+                    <span class="text-xl font-semibold text-gray-900 dark:text-white">Shiplet</span>
+                </a>
+                <button id="mobile-menu-close" class="p-2 text-gray-600 dark:text-gray-300 hover:text-accent"
+                    aria-label="Close menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex-1 flex flex-col gap-2 p-6">
+                <a href="../#features"
+                    class="mobile-menu-link text-lg font-medium text-gray-700 dark:text-gray-200 py-3 hover:text-accent transition-colors">Features</a>
+                <a href="../#preview"
+                    class="mobile-menu-link text-lg font-medium text-gray-700 dark:text-gray-200 py-3 hover:text-accent transition-colors">Preview</a>
+                <a href="../privacy/" class="mobile-menu-link text-lg font-medium text-accent py-3">Privacy</a>
+                <a href="../#download"
+                    class="mobile-menu-link mt-4 inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-full hover:bg-accent/90 transition-colors">
+                    Download App
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Privacy Policy
+                </h1>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Last Updated: January 13, 2026
+                </p>
+            </div>
+
+            <!-- Privacy Content -->
+            <div class="space-y-8">
+
+                <!-- Intro -->
+                <div class="text-gray-700 dark:text-gray-300">
+                    <p>
+                        Shiplet ("we," "our," or "the app") is a package tracking application developed by Tim Heuer.
+                        This privacy policy explains how we collect, use, and protect your information when you use
+                        Shiplet.
+                    </p>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="shiplet-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-900 dark:text-white m-0">Summary</h2>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3 h-3 text-green-600 dark:text-green-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span><strong>We don't sell your data</strong> — Your information is never sold to third
+                                parties.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3 h-3 text-green-600 dark:text-green-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span><strong>Minimal data collection</strong> — We only collect what's necessary to track
+                                your packages.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3 h-3 text-green-600 dark:text-green-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span><strong>Your data stays yours</strong> — All data is stored on your device and your
+                                private iCloud account.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3 h-3 text-green-600 dark:text-green-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span><strong>No tracking or analytics</strong> — We don't use third-party analytics or
+                                advertising SDKs.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Information We Collect -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Information We Collect</h2>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Information You Provide</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">When you use Shiplet, you may provide the following
+                        information:</p>
+
+                    <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 mb-6">
+                        <table class="privacy-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-gray-900 dark:text-white">Data Type</th>
+                                    <th class="text-gray-900 dark:text-white">Purpose</th>
+                                    <th class="text-gray-900 dark:text-white">Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 dark:text-gray-300">
+                                <tr>
+                                    <td><strong>Package tracking numbers</strong></td>
+                                    <td>To retrieve delivery status from carriers</td>
+                                    <td>Device & iCloud</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Package names</strong></td>
+                                    <td>To help you identify your packages</td>
+                                    <td>Device & iCloud</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tags</strong></td>
+                                    <td>To organize your packages</td>
+                                    <td>Device & iCloud</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Information Collected
+                        Automatically</h3>
+                    <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 mb-6">
+                        <table class="privacy-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-gray-900 dark:text-white">Data Type</th>
+                                    <th class="text-gray-900 dark:text-white">Purpose</th>
+                                    <th class="text-gray-900 dark:text-white">Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 dark:text-gray-300">
+                                <tr>
+                                    <td><strong>Tracking status</strong></td>
+                                    <td>Retrieved from carrier APIs (USPS, UPS, FedEx, DHL, OnTrac) based on your
+                                        tracking numbers</td>
+                                    <td>Device & iCloud</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Package location</strong></td>
+                                    <td>Approximate location data provided by carriers during transit</td>
+                                    <td>Device & iCloud</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Camera Access</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2">
+                        Shiplet requests camera access <strong>only</strong> to scan package tracking barcodes. Camera
+                        data is:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 mb-4">
+                        <li>Processed entirely on-device</li>
+                        <li>Never recorded, stored, or transmitted</li>
+                        <li>Used solely to extract tracking number text</li>
+                    </ul>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                        You can deny camera access and manually enter tracking numbers instead.
+                    </p>
+                </section>
+
+                <!-- How We Use Your Information -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">How We Use Your Information</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Your information is used exclusively to:</p>
+                    <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-6">
+                        <li><strong>Display package tracking status</strong> — We query carrier APIs with your tracking
+                            numbers to show delivery updates.</li>
+                        <li><strong>Sync across your devices</strong> — If you enable iCloud, your packages sync
+                            privately through your Apple iCloud account.</li>
+                        <li><strong>Provide offline access</strong> — Package data is cached locally so you can view it
+                            without an internet connection.</li>
+                    </ol>
+
+                    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                        <p class="text-gray-700 dark:text-gray-300 font-medium mb-2">We do <strong>not</strong> use your
+                            information for:</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                            <li>Advertising or marketing</li>
+                            <li>User profiling or analytics</li>
+                            <li>Sale to third parties</li>
+                            <li>Any purpose other than tracking your packages</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Data Storage & Security -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Data Storage & Security</h2>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">On-Device Storage</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">
+                        All package data is stored locally on your device using Apple's SwiftData framework with
+                        standard iOS data protection.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">iCloud Sync</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2">If you have iCloud enabled for Shiplet:</p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 mb-4">
+                        <li>Your data syncs through Apple's CloudKit infrastructure</li>
+                        <li>Data is encrypted in transit and at rest</li>
+                        <li>Only you can access your data through your Apple ID</li>
+                        <li>We cannot access your iCloud data</li>
+                    </ul>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                        You can disable iCloud sync for Shiplet in iOS Settings → [Your Name] → iCloud → Apps Using
+                        iCloud.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Carrier API Communication</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2">When refreshing tracking information:</p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                        <li>Your tracking numbers are sent directly to carrier APIs (USPS, UPS, FedEx, DHL, OnTrac)</li>
+                        <li>Communication uses HTTPS encryption</li>
+                        <li>We do not operate intermediate servers — requests go directly to carriers</li>
+                        <li>Carrier privacy policies apply to data they process</li>
+                    </ul>
+                </section>
+
+                <!-- Third-Party Services -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Third-Party Services</h2>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Shipping Carriers</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Shiplet communicates with these carrier services:
+                    </p>
+
+                    <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 mb-4">
+                        <table class="privacy-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-gray-900 dark:text-white">Carrier</th>
+                                    <th class="text-gray-900 dark:text-white">Privacy Policy</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 dark:text-gray-300">
+                                <tr>
+                                    <td><strong>USPS</strong></td>
+                                    <td><a href="https://www.usps.com/privacypolicy" class="text-accent hover:underline"
+                                            target="_blank" rel="noopener">usps.com/privacypolicy</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>UPS</strong></td>
+                                    <td><a href="https://www.ups.com/us/en/support/shipping-support/legal-terms-conditions/privacy-notice.page"
+                                            class="text-accent hover:underline" target="_blank"
+                                            rel="noopener">ups.com/privacy</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FedEx</strong></td>
+                                    <td><a href="https://www.fedex.com/en-us/trust-center/privacy.html"
+                                            class="text-accent hover:underline" target="_blank"
+                                            rel="noopener">fedex.com/privacy</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DHL</strong></td>
+                                    <td><a href="https://www.dhl.com/us-en/home/footer/privacy-notice.html"
+                                            class="text-accent hover:underline" target="_blank"
+                                            rel="noopener">dhl.com/privacy</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>OnTrac</strong></td>
+                                    <td><a href="https://www.ontrac.com/privacy-policy"
+                                            class="text-accent hover:underline" target="_blank"
+                                            rel="noopener">ontrac.com/privacy-policy</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                        When you add a tracking number, that number is shared with the respective carrier to retrieve
+                        status. Carriers may log API requests per their policies.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Apple Services</h3>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                        <li><strong>iCloud/CloudKit</strong> — For optional cross-device sync (<a
+                                href="https://www.apple.com/privacy/" class="text-accent hover:underline"
+                                target="_blank" rel="noopener">Apple Privacy</a>)</li>
+                        <li><strong>MapKit</strong> — For displaying package location (no personal data shared)</li>
+                    </ul>
+                </section>
+
+                <!-- Data Retention -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Data Retention</h2>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li><strong>Package data</strong> is retained until you delete it from the app</li>
+                        <li><strong>Archived packages</strong> remain until you permanently delete them</li>
+                        <li><strong>Deleted data</strong> is removed from your device and iCloud (sync may take time)
+                        </li>
+                    </ul>
+
+                    <p class="text-gray-700 dark:text-gray-300 mb-2">To delete all your data:</p>
+                    <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                        <li>Delete individual packages via swipe actions</li>
+                        <li>Or delete the app (removes all local data)</li>
+                        <li>iCloud data can be managed in iOS Settings</li>
+                    </ol>
+                </section>
+
+                <!-- Your Rights -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Your Rights</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">You have the right to:</p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+                        <li><strong>Access</strong> — View all data stored in the app at any time</li>
+                        <li><strong>Delete</strong> — Remove any or all packages and their history</li>
+                        <li><strong>Portability</strong> — Your data syncs via iCloud and can be accessed on any of your
+                            devices</li>
+                        <li><strong>Opt-out of iCloud</strong> — Use the app with local-only storage</li>
+                    </ul>
+                </section>
+
+                <!-- Children's Privacy -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Children's Privacy</h2>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Shiplet does not knowingly collect information from children under 13. The app is designed for
+                        general audiences tracking their own package deliveries.
+                    </p>
+                </section>
+
+                <!-- Changes to This Policy -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Changes to This Policy</h2>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        We may update this privacy policy occasionally. Changes will be reflected in the "Last Updated"
+                        date above. Continued use of the app after changes constitutes acceptance.
+                    </p>
+                </section>
+
+                <!-- Contact -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        If you have questions about this privacy policy or your data:
+                    </p>
+                    <a href="mailto:help@shiplet.app"
+                        class="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        help@shiplet.app
+                    </a>
+                </section>
+
+                <!-- California Residents -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">California Residents (CCPA)</h2>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Shiplet does not sell personal information. California residents have the right to know what
+                        data is collected (detailed above) and request deletion at any time through the app.
+                    </p>
+                </section>
+
+                <!-- European Users -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">European Users (GDPR)</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2">For users in the European Economic Area:</p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                        <li><strong>Legal basis:</strong> Legitimate interest in providing the service you requested
+                        </li>
+                        <li><strong>Data controller:</strong> Tim Heuer</li>
+                        <li><strong>No cross-border transfers:</strong> Data stays on your device and Apple's iCloud
+                            infrastructure</li>
+                    </ul>
+                </section>
+
+                <!-- Effective Date -->
+                <p class="text-gray-500 dark:text-gray-400 text-sm text-center italic mt-8">
+                    This privacy policy is effective as of the date listed above and applies to the Shiplet iOS
+                    application.
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo & Copyright -->
+                <div class="flex items-center gap-3">
+                    <img src="../images/app-icon.png" alt="Shiplet icon" class="w-8 h-8 rounded-lg">
+                    <span class="text-gray-600 dark:text-gray-400">© 2026 Shiplet. All rights reserved.</span>
+                </div>
+
+                <!-- Footer Links -->
+                <nav class="flex items-center gap-6">
+                    <a href="../privacy/" class="footer-link text-sm text-accent">Privacy Policy</a>
+                    <a href="mailto:support@shiplet.app" class="footer-link text-sm">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Made with love -->
+            <div class="mt-8 text-center">
+                <p class="text-sm text-gray-400 dark:text-gray-500">
+                    Made with <span class="text-destructive">♥</span> for package trackers everywhere
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

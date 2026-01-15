@@ -1,0 +1,434 @@
+/* ===================================
+   Shiplet Design System
+   Colors derived from iOS app + app icon
+   =================================== */
+
+:root {
+    /* Primary colors - from app icon slate-blue */
+    --primary: #5C6B7A;
+    --primary-dark: #4A5568;
+    --primary-light: #6B7A8A;
+
+    /* Accent colors - from iOS ShipletColors */
+    --accent: #66B3B3;
+    /* statusAccent: rgb(102, 179, 179) */
+    --accent-mint: #90D4A3;
+    /* green dot from icon */
+    --destructive: #D97373;
+    /* muted coral: rgb(217, 115, 115) */
+
+    /* Status colors at 80% opacity */
+    --delivered: rgba(52, 199, 89, 0.8);
+    /* systemGreen */
+    --in-transit: rgba(0, 122, 255, 0.8);
+    /* systemBlue */
+    --pending: #8E8E93;
+    /* systemGray */
+    --issue: #FF9500;
+    /* systemOrange */
+
+    /* Background & Surface */
+    --bg-primary: #FAFBFC;
+    --bg-card: #FFFFFF;
+    --bg-tertiary: #F3F4F6;
+
+    /* Text */
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+
+    /* Utility */
+    --separator: rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Timing */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #0F172A;
+        --bg-card: #1E293B;
+        --bg-tertiary: #334155;
+
+        --text-primary: #F8FAFC;
+        --text-secondary: #94A3B8;
+        --text-muted: #64748B;
+
+        --separator: rgba(255, 255, 255, 0.1);
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   Animations
+   =================================== */
+
+/* Floating animation for hero icon */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered delays for feature cards */
+.animate-delay-100 {
+    animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+    animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+    animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+    animation-delay: 400ms;
+}
+
+/* Initial state for scroll-triggered animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse-subtle {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 179, 179, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(102, 179, 179, 0);
+    }
+}
+
+.animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* ===================================
+   iPhone Mockup Frame
+   =================================== */
+
+.iphone-frame {
+    position: relative;
+    width: 280px;
+    height: 570px;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+    border-radius: 50px;
+    padding: 12px;
+    box-shadow:
+        var(--shadow-xl),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Side buttons */
+.iphone-frame::before {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 120px;
+    width: 3px;
+    height: 70px;
+    background: linear-gradient(180deg, #3A3A3A 0%, #2A2A2A 100%);
+    border-radius: 0 2px 2px 0;
+}
+
+.iphone-frame::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 150px;
+    width: 3px;
+    height: 35px;
+    background: linear-gradient(180deg, #3A3A3A 0%, #2A2A2A 100%);
+    border-radius: 2px 0 0 2px;
+    box-shadow: 0 50px 0 0 #2A2A2A;
+}
+
+/* Screen bezel */
+.iphone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+/* Dynamic Island */
+.iphone-screen::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 28px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+/* Screenshot inside frame */
+.iphone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Larger frame variant */
+.iphone-frame-lg {
+    width: 320px;
+    height: 650px;
+}
+
+@media (min-width: 768px) {
+    .iphone-frame {
+        width: 320px;
+        height: 650px;
+    }
+
+    .iphone-frame-lg {
+        width: 380px;
+        height: 770px;
+    }
+}
+
+/* ===================================
+   Component Styles
+   =================================== */
+
+/* Shiplet Card - matches iOS shipletCard() modifier */
+.shiplet-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--separator);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.shiplet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Status Badge - matches iOS statusBadge() modifier */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    background: rgba(102, 179, 179, 0.15);
+    color: var(--accent);
+}
+
+.status-badge--delivered {
+    background: rgba(52, 199, 89, 0.15);
+    color: #34C759;
+}
+
+.status-badge--transit {
+    background: rgba(0, 122, 255, 0.15);
+    color: #007AFF;
+}
+
+.status-badge--pending {
+    background: rgba(142, 142, 147, 0.15);
+    color: #8E8E93;
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+/* Mobile menu */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+/* ===================================
+   App Store Badge Styling
+   =================================== */
+
+.app-store-badge {
+    display: inline-block;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.app-store-badge:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.app-store-badge img {
+    height: 50px;
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    .app-store-badge img {
+        height: 60px;
+    }
+}
+
+/* ===================================
+   Hero Section Enhancements
+   =================================== */
+
+.hero-gradient {
+    background: linear-gradient(180deg,
+            var(--bg-primary) 0%,
+            rgba(102, 179, 179, 0.05) 50%,
+            var(--bg-primary) 100%);
+}
+
+.hero-icon {
+    filter: drop-shadow(0 10px 20px rgba(92, 107, 122, 0.3));
+}
+
+/* ===================================
+   Feature Icons
+   =================================== */
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent) 0%, rgba(102, 179, 179, 0.7) 100%);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+.footer-link {
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+    color: var(--accent);
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-accent-soft {
+    background-color: rgba(102, 179, 179, 0.1);
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+    background: rgba(102, 179, 179, 0.3);
+    color: var(--text-primary);
+}

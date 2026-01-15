@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Shiplet - Track all your packages in one beautiful app. Real-time updates, multi-carrier support, and a delightful experience.">
+    <meta name="keywords"
+        content="package tracking, shipment tracker, delivery tracker, iOS app, FedEx, UPS, DHL, USPS">
+    <meta name="author" content="Shiplet">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shiplet.app/">
+    <meta property="og:title" content="Shiplet - Track Packages with Delight">
+    <meta property="og:description"
+        content="Track all your packages in one beautiful app. Real-time updates, multi-carrier support, and a delightful experience.">
+    <meta property="og:image" content="./images/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shiplet - Track Packages with Delight">
+    <meta name="twitter:description"
+        content="Track all your packages in one beautiful app. Real-time updates, multi-carrier support, and a delightful experience.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/app-icon.png">
+    <link rel="apple-touch-icon" href="./images/app-icon.png">
+
+    <title>Shiplet - Track Packages with Delight</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#5C6B7A',
+                            dark: '#4A5568',
+                            light: '#6B7A8A',
+                        },
+                        accent: {
+                            DEFAULT: '#66B3B3',
+                            mint: '#90D4A3',
+                        },
+                        destructive: '#D97373',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/custom.css">
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-none transition-shadow duration-300">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="./" class="flex items-center gap-3">
+                    <img src="./images/app-icon.png" alt="Shiplet icon" class="w-10 h-10 rounded-xl">
+                    <span class="text-xl font-semibold text-gray-900 dark:text-white">Shiplet</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#preview" class="nav-link">Preview</a>
+                    <a href="./privacy/" class="nav-link">Privacy</a>
+                    <a href="#download"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white font-medium rounded-full hover:bg-accent/90 transition-colors">
+                        Download
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-accent"
+                    aria-label="Open menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                <a href="./" class="flex items-center gap-3">
+                    <img src="./images/app-icon.png" alt="Shiplet icon" class="w-10 h-10 rounded-xl">
+                    <span class="text-xl font-semibold text-gray-900 dark:text-white">Shiplet</span>
+                </a>
+                <button id="mobile-menu-close" class="p-2 text-gray-600 dark:text-gray-300 hover:text-accent"
+                    aria-label="Close menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex-1 flex flex-col gap-2 p-6">
+                <a href="#features"
+                    class="mobile-menu-link text-lg font-medium text-gray-700 dark:text-gray-200 py-3 hover:text-accent transition-colors">Features</a>
+                <a href="#preview"
+                    class="mobile-menu-link text-lg font-medium text-gray-700 dark:text-gray-200 py-3 hover:text-accent transition-colors">Preview</a>
+                <a href="./privacy/"
+                    class="mobile-menu-link text-lg font-medium text-gray-700 dark:text-gray-200 py-3 hover:text-accent transition-colors">Privacy</a>
+                <a href="#download"
+                    class="mobile-menu-link mt-4 inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-full hover:bg-accent/90 transition-colors">
+                    Download App
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <!-- Hero Content -->
+                <div class="flex-1 text-center lg:text-left">
+                    <!-- App Icon -->
+                    <div class="inline-block mb-8">
+                        <img src="./images/app-icon.png" alt="Shiplet app icon"
+                            class="w-28 h-28 md:w-32 md:h-32 hero-icon animate-float rounded-3xl">
+                    </div>
+
+                    <!-- Headline -->
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        Track packages with <span class="text-gradient">delight</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
+                        All your shipments in one beautiful app. Real-time updates from every carrier, organized exactly
+                        how you like.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div id="download"
+                        class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                        <!-- App Store Badge -->
+                        <a href="#" class="app-store-badge animate-pulse-subtle" aria-label="Download on the App Store">
+                            <svg viewBox="0 0 120 40" class="h-12 md:h-14" role="img" aria-hidden="true">
+                                <rect width="120" height="40" rx="6" fill="#000" />
+                                <path fill="#fff"
+                                    d="M24.769 20.3a4.95 4.95 0 012.356-4.151 5.066 5.066 0 00-3.99-2.158c-1.68-.176-3.308 1.005-4.164 1.005-.872 0-2.19-.988-3.608-.958a5.315 5.315 0 00-4.473 2.728c-1.934 3.348-.491 8.269 1.361 10.976.927 1.325 2.01 2.805 3.428 2.753 1.387-.058 1.905-.885 3.58-.885 1.658 0 2.144.885 3.59.852 1.489-.025 2.426-1.332 3.32-2.67a10.962 10.962 0 001.52-3.092 4.782 4.782 0 01-2.92-4.4zM22.037 12.21a4.872 4.872 0 001.115-3.49 4.957 4.957 0 00-3.208 1.66 4.636 4.636 0 00-1.144 3.36 4.1 4.1 0 003.237-1.53z" />
+                                <path fill="#fff"
+                                    d="M42.302 27.14h-4.733l-1.136 3.356h-2.003l4.483-12.418h2.083l4.483 12.418h-2.039l-1.138-3.356zm-4.243-1.55h3.752l-1.85-5.446h-.051l-1.851 5.447zM55.16 25.97c0 2.813-1.506 4.62-3.779 4.62a3.068 3.068 0 01-2.848-1.583h-.043v4.484h-1.86V21.442h1.8v1.506h.034a3.21 3.21 0 012.882-1.6c2.298 0 3.813 1.816 3.813 4.621zm-1.912 0c0-1.833-.948-3.038-2.393-3.038-1.42 0-2.375 1.23-2.375 3.038 0 1.824.955 3.046 2.375 3.046 1.445 0 2.393-1.197 2.393-3.046zM65.125 25.97c0 2.813-1.506 4.62-3.779 4.62a3.068 3.068 0 01-2.848-1.583h-.043v4.484h-1.86V21.442h1.8v1.506h.034a3.21 3.21 0 012.882-1.6c2.298 0 3.813 1.816 3.813 4.621zm-1.912 0c0-1.833-.948-3.038-2.393-3.038-1.42 0-2.375 1.23-2.375 3.038 0 1.824.955 3.046 2.375 3.046 1.445 0 2.393-1.197 2.393-3.046zM71.71 27.036c.138 1.232 1.335 2.04 2.97 2.04 1.566 0 2.693-.808 2.693-1.919 0-.964-.68-1.54-2.29-1.936l-1.609-.388c-2.28-.55-3.339-1.617-3.339-3.348 0-2.142 1.867-3.614 4.519-3.614 2.624 0 4.423 1.472 4.483 3.614h-1.876c-.112-1.239-1.137-1.987-2.634-1.987-1.496 0-2.521.757-2.521 1.858 0 .878.654 1.395 2.255 1.79l1.368.336c2.548.603 3.606 1.626 3.606 3.443 0 2.323-1.85 3.778-4.793 3.778-2.754 0-4.614-1.42-4.734-3.667h1.902zM83.346 19.3v2.142h1.722v1.472h-1.722v4.991c0 .776.345 1.137 1.102 1.137.204-.004.408-.018.611-.043v1.463a5.104 5.104 0 01-1.032.086c-1.833 0-2.548-.689-2.548-2.444v-5.19h-1.316v-1.472h1.316V19.3h1.867zM86.065 25.97c0-2.849 1.678-4.639 4.294-4.639 2.625 0 4.295 1.79 4.295 4.639 0 2.856-1.661 4.638-4.295 4.638-2.633 0-4.294-1.782-4.294-4.638zm6.695 0c0-1.954-.895-3.108-2.401-3.108s-2.4 1.162-2.4 3.108c0 1.962.894 3.106 2.4 3.106s2.401-1.144 2.401-3.106zM96.186 21.442h1.773v1.541h.043a2.16 2.16 0 012.177-1.635 2.866 2.866 0 01.637.069v1.738a2.598 2.598 0 00-.835-.112 1.873 1.873 0 00-1.937 2.083v5.37h-1.858v-9.054zM109.384 27.837c-.25 1.643-1.85 2.771-3.898 2.771-2.634 0-4.269-1.764-4.269-4.595 0-2.84 1.644-4.682 4.19-4.682 2.506 0 4.08 1.72 4.08 4.466v.637h-6.394v.112a2.358 2.358 0 002.436 2.564 2.048 2.048 0 002.09-1.273h1.765zm-6.282-2.702h4.526a2.177 2.177 0 00-2.22-2.298 2.292 2.292 0 00-2.306 2.298z" />
+                                <text x="42" y="14" fill="#fff" font-size="8"
+                                    font-family="-apple-system, sans-serif">Download on the</text>
+                            </svg>
+                        </a>
+
+                        <!-- Secondary CTA -->
+                        <a href="#features"
+                            class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-accent transition-colors font-medium">
+                            Learn more
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Carrier Badges -->
+                    <div class="mt-10 flex flex-wrap items-center gap-3 justify-center lg:justify-start">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Works with:</span>
+                        <span class="status-badge status-badge--transit">FedEx</span>
+                        <span class="status-badge status-badge--delivered">UPS</span>
+                        <span class="status-badge"
+                            style="background: rgba(255, 204, 0, 0.15); color: #CC9900;">DHL</span>
+                        <span class="status-badge status-badge--pending">USPS</span>
+                        <span class="text-sm text-gray-400 dark:text-gray-500">+more</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image - iPhone Mockup -->
+                <div class="flex-shrink-0">
+                    <div class="iphone-frame">
+                        <div class="iphone-screen">
+                            <img src="./images/screenshot.png" alt="Shiplet app showing package tracking list"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 md:py-32 bg-white dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Everything you need to track shipments
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Designed for simplicity, built for power users. Shiplet brings calm to the chaos of package
+                    tracking.
+                </p>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1: Multi-Carrier -->
+                <div class="shiplet-card scroll-animate feature-card">
+                    <div class="feature-icon mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Multi-Carrier Support
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        Track packages from FedEx, UPS, DHL, USPS, and 50+ carriers worldwide in one place.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Real-time Updates -->
+                <div class="shiplet-card scroll-animate feature-card">
+                    <div class="feature-icon mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Real-time Notifications
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        Get instant push notifications when your packages move, are out for delivery, or arrive.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Organization -->
+                <div class="shiplet-card scroll-animate feature-card">
+                    <div class="feature-icon mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Tags & Organization
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        Label packages with custom tags like "Work" or "Gifts" to keep everything organized.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Clean UI -->
+                <div class="shiplet-card scroll-animate feature-card">
+                    <div class="feature-icon mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Clean, Minimal Design
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        A calm, clutter-free interface that makes tracking packages a delightful experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section id="preview" class="py-20 md:py-32 bg-gray-50 dark:bg-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <!-- Preview Text -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                        Designed for the way you shop
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                        Whether you're tracking one package or twenty, Shiplet keeps you informed without the noise.
+                        Beautiful status badges, smart sorting, and a search that actually works.
+                    </p>
+
+                    <!-- Feature List -->
+                    <ul class="space-y-4 text-left">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-gray-700 dark:text-gray-200">
+                                <strong class="font-medium">Smart status colors</strong> — see delivery progress at a
+                                glance
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-gray-700 dark:text-gray-200">
+                                <strong class="font-medium">Automatic carrier detection</strong> — just paste a tracking
+                                number
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-gray-700 dark:text-gray-200">
+                                <strong class="font-medium">iCloud sync</strong> — your packages stay in sync across
+                                devices
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!-- CTA -->
+                    <div class="mt-10">
+                        <a href="#download"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-full hover:bg-accent/90 transition-colors">
+                            Get Shiplet Free
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Preview iPhone -->
+                <div class="flex-shrink-0 scroll-animate">
+                    <div class="iphone-frame iphone-frame-lg">
+                        <div class="iphone-screen">
+                            <img src="./images/screenshot.png"
+                                alt="Shiplet app interface showing shipments list with FedEx, DHL, and UPS packages"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 md:py-32 bg-white dark:bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block mb-6">
+                <img src="./images/app-icon.png" alt="Shiplet app icon" class="w-20 h-20 rounded-2xl hero-icon">
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Ready to track with delight?
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
+                Download Shiplet today and experience package tracking the way it should be — simple, beautiful, and
+                stress-free.
+            </p>
+            <a href="#" class="app-store-badge inline-block" aria-label="Download on the App Store">
+                <svg viewBox="0 0 120 40" class="h-14" role="img" aria-hidden="true">
+                    <rect width="120" height="40" rx="6" fill="#000" />
+                    <path fill="#fff"
+                        d="M24.769 20.3a4.95 4.95 0 012.356-4.151 5.066 5.066 0 00-3.99-2.158c-1.68-.176-3.308 1.005-4.164 1.005-.872 0-2.19-.988-3.608-.958a5.315 5.315 0 00-4.473 2.728c-1.934 3.348-.491 8.269 1.361 10.976.927 1.325 2.01 2.805 3.428 2.753 1.387-.058 1.905-.885 3.58-.885 1.658 0 2.144.885 3.59.852 1.489-.025 2.426-1.332 3.32-2.67a10.962 10.962 0 001.52-3.092 4.782 4.782 0 01-2.92-4.4zM22.037 12.21a4.872 4.872 0 001.115-3.49 4.957 4.957 0 00-3.208 1.66 4.636 4.636 0 00-1.144 3.36 4.1 4.1 0 003.237-1.53z" />
+                    <path fill="#fff"
+                        d="M42.302 27.14h-4.733l-1.136 3.356h-2.003l4.483-12.418h2.083l4.483 12.418h-2.039l-1.138-3.356zm-4.243-1.55h3.752l-1.85-5.446h-.051l-1.851 5.447zM55.16 25.97c0 2.813-1.506 4.62-3.779 4.62a3.068 3.068 0 01-2.848-1.583h-.043v4.484h-1.86V21.442h1.8v1.506h.034a3.21 3.21 0 012.882-1.6c2.298 0 3.813 1.816 3.813 4.621zm-1.912 0c0-1.833-.948-3.038-2.393-3.038-1.42 0-2.375 1.23-2.375 3.038 0 1.824.955 3.046 2.375 3.046 1.445 0 2.393-1.197 2.393-3.046zM65.125 25.97c0 2.813-1.506 4.62-3.779 4.62a3.068 3.068 0 01-2.848-1.583h-.043v4.484h-1.86V21.442h1.8v1.506h.034a3.21 3.21 0 012.882-1.6c2.298 0 3.813 1.816 3.813 4.621zm-1.912 0c0-1.833-.948-3.038-2.393-3.038-1.42 0-2.375 1.23-2.375 3.038 0 1.824.955 3.046 2.375 3.046 1.445 0 2.393-1.197 2.393-3.046zM71.71 27.036c.138 1.232 1.335 2.04 2.97 2.04 1.566 0 2.693-.808 2.693-1.919 0-.964-.68-1.54-2.29-1.936l-1.609-.388c-2.28-.55-3.339-1.617-3.339-3.348 0-2.142 1.867-3.614 4.519-3.614 2.624 0 4.423 1.472 4.483 3.614h-1.876c-.112-1.239-1.137-1.987-2.634-1.987-1.496 0-2.521.757-2.521 1.858 0 .878.654 1.395 2.255 1.79l1.368.336c2.548.603 3.606 1.626 3.606 3.443 0 2.323-1.85 3.778-4.793 3.778-2.754 0-4.614-1.42-4.734-3.667h1.902zM83.346 19.3v2.142h1.722v1.472h-1.722v4.991c0 .776.345 1.137 1.102 1.137.204-.004.408-.018.611-.043v1.463a5.104 5.104 0 01-1.032.086c-1.833 0-2.548-.689-2.548-2.444v-5.19h-1.316v-1.472h1.316V19.3h1.867zM86.065 25.97c0-2.849 1.678-4.639 4.294-4.639 2.625 0 4.295 1.79 4.295 4.639 0 2.856-1.661 4.638-4.295 4.638-2.633 0-4.294-1.782-4.294-4.638zm6.695 0c0-1.954-.895-3.108-2.401-3.108s-2.4 1.162-2.4 3.108c0 1.962.894 3.106 2.4 3.106s2.401-1.144 2.401-3.106zM96.186 21.442h1.773v1.541h.043a2.16 2.16 0 012.177-1.635 2.866 2.866 0 01.637.069v1.738a2.598 2.598 0 00-.835-.112 1.873 1.873 0 00-1.937 2.083v5.37h-1.858v-9.054zM109.384 27.837c-.25 1.643-1.85 2.771-3.898 2.771-2.634 0-4.269-1.764-4.269-4.595 0-2.84 1.644-4.682 4.19-4.682 2.506 0 4.08 1.72 4.08 4.466v.637h-6.394v.112a2.358 2.358 0 002.436 2.564 2.048 2.048 0 002.09-1.273h1.765zm-6.282-2.702h4.526a2.177 2.177 0 00-2.22-2.298 2.292 2.292 0 00-2.306 2.298z" />
+                    <text x="42" y="14" fill="#fff" font-size="8" font-family="-apple-system, sans-serif">Download on
+                        the</text>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo & Copyright -->
+                <div class="flex items-center gap-3">
+                    <img src="./images/app-icon.png" alt="Shiplet icon" class="w-8 h-8 rounded-lg">
+                    <span class="text-gray-600 dark:text-gray-400">© 2026 Shiplet. All rights reserved.</span>
+                </div>
+
+                <!-- Footer Links -->
+                <nav class="flex items-center gap-6">
+                    <a href="./privacy/" class="footer-link text-sm">Privacy Policy</a>
+                    <a href="mailto:support@shiplet.app" class="footer-link text-sm">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Made with love -->
+            <div class="mt-8 text-center">
+                <p class="text-sm text-gray-400 dark:text-gray-500">
+                    Made with <span class="text-destructive">♥</span> for package trackers everywhere
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
