@@ -361,6 +361,158 @@ body {
 }
 
 /* ===================================
+   TestFlight Badge Styling
+   =================================== */
+
+.testflight-badge {
+    display: inline-block;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.testflight-badge:hover {
+    transform: scale(1.05);
+}
+
+.testflight-badge-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #0066CC 0%, #0055AA 100%);
+    padding: 0.625rem 1rem 0.625rem 0.75rem;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    min-height: 50px;
+}
+
+@media (min-width: 768px) {
+    .testflight-badge-inner {
+        min-height: 56px;
+        padding: 0.75rem 1.25rem 0.75rem 0.875rem;
+    }
+}
+
+.testflight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.testflight-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.testflight-label {
+    font-size: 0.625rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+    .testflight-label {
+        font-size: 0.7rem;
+    }
+}
+
+.testflight-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+    .testflight-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* Beta Badge - the key indicator */
+.beta-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 4px rgba(255, 107, 0, 0.4);
+    animation: pulse-beta 2s ease-in-out infinite;
+}
+
+@keyframes pulse-beta {
+
+    0%,
+    100% {
+        box-shadow: 0 2px 4px rgba(255, 107, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 2px 8px rgba(255, 107, 0, 0.6);
+    }
+}
+
+/* Navigation TestFlight Badge (smaller) */
+.testflight-badge-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: linear-gradient(135deg, #0066CC 0%, #0055AA 100%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    position: relative;
+}
+
+.testflight-badge-nav:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Mobile TestFlight Badge */
+.testflight-badge-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #0066CC 0%, #0055AA 100%);
+    color: white !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: opacity var(--transition-fast);
+}
+
+.testflight-badge-mobile:hover {
+    opacity: 0.9;
+    color: white !important;
+}
+
+/* Small Beta Badge for nav/mobile */
+.beta-badge-sm {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 700;
+    padding: 0.15rem 0.3rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ===================================
    Hero Section Enhancements
    =================================== */
 
