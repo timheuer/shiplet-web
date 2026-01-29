@@ -371,9 +371,9 @@
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Carrier API Communication</h3>
                     <p class="text-gray-700 dark:text-gray-300 mb-2">When refreshing tracking information:</p>
                     <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                        <li>Your tracking numbers are sent to carrier APIs (USPS, UPS, FedEx, DHL, OnTrac) via EasyPost (see EasyPost Tracking Service section below for details)</li>
+                        <li>Your tracking numbers are sent directly to carrier APIs (USPS, UPS, FedEx, DHL, OnTrac), or may be sent via EasyPost for reliability (see EasyPost Tracking Service section below for details)</li>
                         <li>Communication uses HTTPS encryption</li>
-                        <li>Carrier and EasyPost privacy policies apply to data they process</li>
+                        <li>Carrier privacy policies apply to data they process; EasyPost's privacy policy applies when used</li>
                     </ul>
                 </section>
 
@@ -382,7 +382,7 @@
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Third-Party Services</h2>
 
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Shipping Carriers</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">Shiplet communicates with these carrier services via EasyPost as an intermediary:
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Shiplet communicates with these carrier services:
                     </p>
 
                     <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 mb-4">
@@ -427,8 +427,8 @@
                         </table>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                        When you add a tracking number, that number is shared with the respective carrier through EasyPost to retrieve
-                        status. Both EasyPost and carriers may log API requests per their policies.
+                        When you add a tracking number, that number is shared with the respective carrier to retrieve
+                        status. Carriers may log API requests per their policies.
                     </p>
                     <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
                         Shiplet does not guarantee carrier availability or delivery accuracy and is dependent on
@@ -437,12 +437,12 @@
 
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">EasyPost Tracking Service</h3>
                     <p class="text-gray-700 dark:text-gray-300 mb-4">
-                        Shiplet uses <strong>EasyPost</strong> as an intermediary service to facilitate communication with carrier APIs:
+                        Shiplet may use <strong>EasyPost</strong> as a fallback service for reliability when communicating with carrier APIs:
                     </p>
                     <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 mb-4">
-                        <li><strong>Purpose:</strong> EasyPost acts as a unified API gateway to retrieve tracking information from multiple carriers</li>
-                        <li><strong>Data Shared:</strong> Tracking numbers are temporarily stored by EasyPost to query carrier systems</li>
-                        <li><strong>Fallback Service:</strong> EasyPost may also serve as an alternative tracking data source when direct carrier APIs are unavailable</li>
+                        <li><strong>Primary Method:</strong> Tracking numbers are sent directly to carrier APIs whenever possible</li>
+                        <li><strong>Fallback Service:</strong> EasyPost may be used as an intermediary when direct carrier communication is unavailable or for improved reliability</li>
+                        <li><strong>Data Shared:</strong> When EasyPost is used, tracking numbers are temporarily stored to query carrier systems</li>
                         <li><strong>Privacy Policy:</strong> <a href="https://www.easypost.com/privacy" class="text-accent hover:underline" target="_blank" rel="noopener">easypost.com/privacy</a></li>
                     </ul>
 
