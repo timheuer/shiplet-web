@@ -371,10 +371,11 @@
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Carrier API Communication</h3>
                     <p class="text-gray-700 dark:text-gray-300 mb-2">When refreshing tracking information:</p>
                     <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                        <li>Your tracking numbers are sent directly to carrier APIs (USPS, UPS, FedEx, DHL, OnTrac)</li>
+                        <li>Your tracking numbers are sent to carrier APIs (USPS, UPS, FedEx, DHL, OnTrac) via EasyPost, a third-party tracking service that acts as an intermediary</li>
+                        <li>EasyPost temporarily stores tracking numbers to facilitate communication with carrier services</li>
+                        <li>EasyPost may also be used as a fallback tracking service when direct carrier APIs are unavailable</li>
                         <li>Communication uses HTTPS encryption</li>
-                        <li>We do not operate intermediate servers — requests go directly to carriers</li>
-                        <li>Carrier privacy policies apply to data they process</li>
+                        <li>Carrier and EasyPost privacy policies apply to data they process</li>
                     </ul>
                 </section>
 
@@ -435,6 +436,17 @@
                         Shiplet does not guarantee carrier availability or delivery accuracy and is dependent on
                         third-party shipping services.
                     </p>
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">EasyPost Tracking Service</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        Shiplet uses <strong>EasyPost</strong> as an intermediary service to facilitate communication with carrier APIs:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 mb-4">
+                        <li><strong>Purpose:</strong> EasyPost acts as a unified API gateway to retrieve tracking information from multiple carriers</li>
+                        <li><strong>Data Shared:</strong> Tracking numbers are temporarily stored by EasyPost to query carrier systems</li>
+                        <li><strong>Fallback Service:</strong> EasyPost may also serve as an alternative tracking data source when direct carrier APIs are unavailable</li>
+                        <li><strong>Privacy Policy:</strong> <a href="https://www.easypost.com/privacy" class="text-accent hover:underline" target="_blank" rel="noopener">easypost.com/privacy</a></li>
+                    </ul>
 
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Apple Services</h3>
                     <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
